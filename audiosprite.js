@@ -81,6 +81,11 @@ var optimist = require('optimist')
   , 'default': ''
   , describe: 'Include raw slices(for Web Audio API) in specified formats.'
   })
+  .options('rawpartnames', {
+    alias: 'n'
+  , 'default': null
+  , describe: 'Maintain original file names for raw files.'
+  })
   .options('help', {
     alias: 'h'
   , describe: 'Show this help message.'
@@ -103,6 +108,7 @@ var NUM_CHANNELS = parseInt(argv.channels, 10)
 var GAP_SECONDS = parseFloat(argv.gap)
 var MINIMUM_SOUND_LENGTH = parseFloat(argv.minlength)
 var VBR = parseInt(argv.vbr, 10)
+var fileNames = [];
 
 var loops = argv.loop ? [].concat(argv.loop) : []
 
@@ -331,11 +337,17 @@ function processFiles() {
 
       var name = path.basename(file).replace(/\.[a-zA-Z0-9]+$/, '')
       appendFile(name, tmp, tempFile, function(err) {
+        fileNames.push(name);
         if (rawparts != null ? rawparts.length : void 0) {
         async.forEachSeries(rawparts, function(ext, cb) {
           winston.debug('Start export slice', { name: name, format: ext, i: i })
-          exportFile(tmp, argv.output + '_' + pad(i, 3), ext, formats[ext]
-            , false, cb)
+          winston.info('File: ' + name)
+          if (argv.rawpartnames) {
+            exportFile(tmp, name, ext, formats[ext], false, cb)
+          }
+          else {
+            exportFile(tmp, argv.output + '_' + pad(i, 3), ext, formats[ext], false, cb)
+          }
           }, tempProcessed)
         } else {
           tempProcessed()
@@ -364,6 +376,7 @@ function processFiles() {
       })
 
       var finalJson = {}
+      var individualJson = {}
 
       switch (argv.format) {
 
