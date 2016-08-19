@@ -1,0 +1,72 @@
+{
+  "name": "audiosprite",
+  "description": "Concat small audio files into single file and export in many formats.",
+  "keywords": [
+    "audio",
+    "audio-sprite",
+    "jukebox",
+    "ffmpeg"
+  ],
+  "author": {
+    "name": "Tõnis Tiigi",
+    "email": "tonistiigi@gmail.com"
+  },
+  "version": "0.4.0",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/tonistiigi/audiosprite/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tonistiigi/audiosprite.git"
+  },
+  "main": "./audiosprite.js",
+  "bin": {
+    "audiosprite": "./audiosprite.js"
+  },
+  "dependencies": {
+    "async": "~0.2.10",
+    "mkdirp": "^0.5.0",
+    "optimist": "~0.6.1",
+    "underscore": "~1.6.0",
+    "winston": "~0.7.2"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "optionalDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "gitHead": "47c85e4908986721279f928983f5dc16ed48c9aa",
+  "bugs": {
+    "url": "https://github.com/tonistiigi/audiosprite/issues"
+  },
+  "homepage": "https://github.com/tonistiigi/audiosprite",
+  "_id": "audiosprite@0.4.0",
+  "_shasum": "444a5f7a0d7be37bde1f256645a22162f1e0b9dd",
+  "_from": "audiosprite@>=0.4.0 <0.5.0",
+  "_npmVersion": "1.4.21",
+  "_npmUser": {
+    "name": "tonistiigi",
+    "email": "tonistiigi@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "tonistiigi",
+      "email": "tonistiigi@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "444a5f7a0d7be37bde1f256645a22162f1e0b9dd",
+    "tarball": "https://npm.toolshed.cloud.bbc.co.uk/audiosprite/-/audiosprite-0.4.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://npm.toolshed.cloud.bbc.co.uk/audiosprite/-/audiosprite-0.4.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

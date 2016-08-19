@@ -1,0 +1,17 @@
+.grunt
+.idea
+*.iml
+node_modules
+/notes
+/SciTEDirectory.properties
+ftppass.json
+_SpecRunner*.html
+output
+/skins/*/build
+engine/src/gelui/assets/styles/main.css
+engine/src/gelui/assets/styles/main.css.map
+engine/src/gelui-2.3/assets/styles/main.css
+engine/src/gelui-2.3/assets/styles/main.css.map
+**/*/.DS_Store
+manual.pdf
+.DS_Store
