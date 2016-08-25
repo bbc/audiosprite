@@ -108,7 +108,6 @@ var NUM_CHANNELS = parseInt(argv.channels, 10)
 var GAP_SECONDS = parseFloat(argv.gap)
 var MINIMUM_SOUND_LENGTH = parseFloat(argv.minlength)
 var VBR = parseInt(argv.vbr, 10)
-var fileNames = [];
 
 var loops = argv.loop ? [].concat(argv.loop) : []
 
@@ -337,7 +336,6 @@ function processFiles() {
 
       var name = path.basename(file).replace(/\.[a-zA-Z0-9]+$/, '')
       appendFile(name, tmp, tempFile, function(err) {
-        fileNames.push(name);
         if (rawparts != null ? rawparts.length : void 0) {
         async.forEachSeries(rawparts, function(ext, cb) {
           winston.debug('Start export slice', { name: name, format: ext, i: i })
@@ -376,7 +374,6 @@ function processFiles() {
       })
 
       var finalJson = {}
-      var individualJson = {}
 
       switch (argv.format) {
 
